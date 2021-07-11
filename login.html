@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="images\tablogo.png">
+        <title>Login Page</title>
+        <style>
+            *{
+                margin: 0px 0px;
+            }
+            body{
+                background-image: url("images/bglogin.jpg");
+                background-size: 100% 100%;
+            }
+            .nav{
+                width: 100%;
+                height: 10%;
+                position:fixed; 
+                background-color: rgba(245, 245, 245, 0.5);
+            }
+            #logo{
+                float: left;
+                margin-top: 2px;
+                margin-left: 2px;
+            }
+            .navbtn{
+                cursor: pointer;
+                margin-top: 15px;
+                border: none;
+                width: 12%;
+                height: 65%;
+                float: left;
+                background: none;
+            }
+            #head{
+                background-color: rgba(0, 255, 0, 0.6);
+                border-radius: 10px;
+                text-align: center;
+                padding: 10px;
+                border: solid black 1px;
+                height: 6%;
+                margin-left: 34.3%;
+                width: 34.7%;
+            }
+            #log_form{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 20px;
+                border: 1px solid black;
+                width: 32%;
+                height: 22%;
+                margin-left: 34.5%;
+                padding:20px;
+                padding-left: 40px;
+                border-radius: 10px;
+                background-color: rgba(255, 217, 0, 0.1);
+            }
+            .in{
+                padding: 15px;
+                border-radius: 7px;
+                width: 150%;
+                border: none;
+                background-color:rgba(144, 158, 238, 0.5);
+            }
+            .btn{
+                width: 135px;
+                padding: 15px;
+                background-color: cyan;
+                border-radius: 7px;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="home">
+            <div class="nav">
+            <img id="logo" src="images\tablogo.png" height="72px" width="72px" >
+            <a href="index.html"><button class="navbtn"><b>Home</b></button></a>
+            <a href="registration.html"><button class="navbtn"><b>Register</b></button></a>
+            </div>
+        </nav>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 id="head">Login</h1><br>
+        <form id="log_form" method="POST" action="cheak.php">
+            <table style="font-size: 20px;">
+                <tr><td>Mobile Number</td><td class="tin"><input class="in" name="tel" type="tel"></td></tr>
+                <tr><td>Password</td><td class="tin"><input class="in" name="pass" type="password"></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td> </td><td><button class="btn" value="submit"> Submit </button></td></tr>
+            </table>
+        </form>
+        <br>
+        <center>Or<br>
+        <a href="registration.html">Register here</a></center>
+    </body>
+</html>

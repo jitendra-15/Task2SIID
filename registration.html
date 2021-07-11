@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="images\tablogo.png">
+        <title>Registration Page</title>
+        <style>
+            *{
+                margin: 0px 0px;
+            }
+            .nav{
+                width: 100%;
+                height: 10%;
+                position:fixed; 
+                background-color: rgba(245, 245, 245, 0.5);
+            }
+            #logo{
+                float: left;
+                margin-top: 2px;
+                margin-left: 2px;
+            }
+            .navbtn{
+                cursor: pointer;
+                margin-top: 15px;
+                border: none;
+                width: 12%;
+                height: 65%;
+                float: left;
+                background: none;
+            }
+            body{
+                background-image: url("images/bgreg.jpg");
+                background-size: 100% 100%;
+            }
+            #head{
+                margin-left: 40%;
+                background-color: rgba(255, 217, 0, 0.8);
+                padding-left: 5%;
+                height: 8%;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                padding-top: 12px;
+            }
+            #reg_form{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 20px;
+                border: 1px solid black;
+                height: 62%;
+                margin-left: 40%;
+                padding:20px;
+                padding-left: 5%;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-right: none;
+                background-color: rgba(255, 217, 0, 0.1);
+            }
+            .in{
+                padding: 15px;
+                width: 300px;
+                border-radius: 7px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            .btn{
+                width: 135px;
+                padding: 15px;
+                background-color: rgba(128, 255, 0, 0.9);
+                border-radius: 7px;
+                border: none;
+            }
+        </style>
+        <script>
+            function qwer(){
+                var tel = document.getElementById("tel").value;
+                var regx = /^[6-9][0-9]{9}$/;
+                var pass = document.getElementById("pass").value;
+                var cpass = document.getElementById("cpass").value;
+                var regx1 = /[a-zA-Z0-9\.-+*-@!#$%&]/;
+                if(regx.test(tel) != true){
+                    alert("Wrong mobile number.")
+                    return false;
+                }
+                else if(pass != cpass){
+                    alert("Password Mismatch");
+                    return false;
+                }  
+                else if(regx1.test(pass) != true){
+                    alert("Password must contains a number, capital letter, Small Letter, Symbol")
+                    return false;
+                }
+                else 
+                    return true;
+            }
+        </script>
+    </head>
+    <body>
+        <nav id="home">
+            <div class="nav">
+            <img id="logo" src="images\tablogo.png" height="72px" width="72px" >
+            <a href="index.html"><button class="navbtn"><b>Home</b></button></a>
+            <a href="login.html"><button class="navbtn"><b>Login</b></button></a>
+            </div>
+        </nav>
+        <br><br><br><br><br>
+        <h1 id="head">Enter Your Details :</h2><br>
+        <form id="reg_form" method="POST" action="Insert.php" onsubmit="return qwer()">
+            <table style="font-size: 20px;color: whitesmoke;font-weight: bolder;">
+                <tr><td>Name</td><td><input class="in" id="name" name="name" type="text" placeholder="Enter your Name" required></td></tr>
+                <tr><td>Email</td><td><input class="in" id="email" name="email" type="email" placeholder="Like abc@gmail.com" required></td></tr>
+                <tr><td>Mobile</td><td><input class="in" id="tel" name="tel" type="text" minlength="10" maxlength="10" placeholder="Enter Mobile Number" required></td></tr>
+                <tr><td>Branch</td><td>
+                <select class="in" id="branch" name="branch" type="text"  required>
+                    <option value="BCA">BACHELOR OF COMPUTER APPLICATION</option>
+                    <option value="BE">BACHELOR OF ENGINEERING</option>
+                    <option value="BSc">BACHELOR OF SCIENCE</option>
+                    <option value="BTECH">BACHELOR OF TECHNOLOGY</option>
+                    <option value="MCA">MASTER OF COMPUTER APPLICATION</option>
+                    <option value="MTECH">MASTER OF TECHNOLOGY</option>
+                    <option value="ME">MASTER OF ENGINEERING</option>
+                    <option value="MSc">MASTER OF SCIENCE</option>
+                    <option value="MITM">MASTER OF INFORMATION TECHNOLOGY AND MANAGEMENT</option>
+                </select></td></tr>
+                <tr><td>Year</td><td><input class="in" id="year" name="year" type="number" max="4" min="1" placeholder="Enter Year" required></td></tr>
+                <tr><td>Domain</td><td><input class="in" id="domain" name="domain" type="text" placeholder="web dev,App Dev,ML,AI,C,C++, ... etc" required></td></tr>
+                <tr><td>Password</td><td><input class="in" id="pass" name="pass" type="password" placeholder="Enter Password" required></td></tr>
+                <tr><td>Confirm Password</td><td><input class="in" id="cpass" type="password" placeholder="Retype Password" required></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td> </td><td><button class="btn" value="reset"> Reset </button> <button class="btn" style="float: right;" value="submit" onclick="validate();"> Submit </button></td></tr> 
+            </table>      
+        </form>
+    </body>
+</html>
